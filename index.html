@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+	<title>e-LAMASO Siswa</title>
+	<!-- LOGO FAVICON -->
+		<link href="https://1.bp.blogspot.com/-q57d59JTX8g/Xa-kAy6T0XI/AAAAAAAAOSo/seM01RU3Q_Q7BvLm73wC09BBsQMs05pYACLcBGAsYHQ/s320/LOGO%2BLAMASO.png" rel="shortcut icon" type="image/x-icon"/>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style_lamaso.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js" type="text/javascript"/></script>  -->
+
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js' type='text/javascript'/>
+
+		<script type='text/x-mathjax-config'>   MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}}); </script> <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML' type='text/javascript'> </script>
+	</head>
+	
+	
+	<body>
+					<!-- Top container -->
+			<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+			  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+			  <span class="w3-bar-item w3-right">e-Lamaso Siswa</span>
+			</div>
+			<!-- Overlay effect when opening sidebar on small screens -->
+			<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+			<!-- Sidebar/menu -->
+			<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+				<div class="w3-container w3-row">
+						<div class="w3-col s4">
+						<!-- LOGO SEKOLAH -->
+							<img id="logosekolahmenu" class="w3-circle w3-margin-right" style="width:90px;height:90px;border:1px solid blue">
+						  <!-- SELESAI LOGO SEKOLAH -->
+						</div>
+					<div class="w3-col s8 w3-bar">
+						<span><strong id="namasekolah"></strong></span><br/><strong id="namakota"></strong><br/><span id="tapel">(2020/2021)</span>
+					</div>
+					<hr>
+					<div class="w3-container">
+						<h5>Menu e-Lamaso</h5>
+					</div>
+					<div class="w3-bar-block" id="barlogin">
+						<a href="#" class="w3-bar-item w3-button w3-padding" onclick="barloginelamaso()"><i class="fa fa-sign-in"></i>  Login</a>
+						<a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Tutup Menu</a>
+					</div>
+					<div class="w3-bar-block" id="barsiswa">
+						<a href="#" class="w3-bar-item w3-button w3-padding" ><i class="fa fa-id-card-o fa-fw"></i>  Data Saya</a>
+						<a href="#" class="w3-bar-item w3-button w3-padding" ><i class="fa fa-clock-o fa-fw"></i>  Nilai Saya</a>
+						<a href="#" class="w3-bar-item w3-button w3-padding" onclick="logout()"><i class="fa fa-sign-out"></i>  Logout</a>
+						<a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Tutup Menu</a>
+					</div>
+				</div>
+			</nav>
+
+			<div class="w3-main" style="margin-left:300px;margin-top:43px;" id="mainlogin">
+			<hr/>
+				<h2 class="w3-center">Selamat Datang </h2>
+				<div class="w3-center">
+				<img src="https://1.bp.blogspot.com/-q57d59JTX8g/Xa-kAy6T0XI/AAAAAAAAOSo/seM01RU3Q_Q7BvLm73wC09BBsQMs05pYACLcBGAsYHQ/s320/LOGO%2BLAMASO.png" 
+					style="width:145px;border:2px dotted blue;margin:auto"/>
+					<br/>
+						Token/Sandi:<br/><input type="text" id="previewtoken" style="border:1px solid blue;width:50%;border-radius:5px"/>
+						<br/><br/>
+						<button onclick="kliklamaso()" style="cursor:pointer;border:1px solid yellow;border-radius:15px;padding:5px;background-color:navy;color:yellow" title="klik Untuk Memulai">e-Lamaso Siswa</button>
+				<div id="cek"></div>
+				</div>
+				
+			</div>
+			<div class="w3-main" style="margin-left:300px;margin-top:43px;" id="kontenLamaso">
+					<div class="w3-center" id="previewlogohp">
+						<br/>
+						<img src="https://1.bp.blogspot.com/-wWPZEohYj_k/Xe_ZUEPgB3I/AAAAAAAAOgY/7idyYLxlmqgwHo6TJ9QQK0sC_MQgmBXrwCLcBGAsYHQ/s1600/logo%2Blamaso.jpg" class="w3-circle" style="width:145px;border:2px dotted red"/>
+						
+						<h2>e-Lamaso Siswa</h2>
+					</div>
+					
+						<span style="display:none" id="keyidSekolah">SDN Ratujaya 1</span>
+						<span style="display:none" id="keyidToken">Kelas</span>
+						<span style="display:none" id="keykelas">Kelas</span>
+						<span style="display:none" id="keysekolah">Sekolah</span>
+						<span style="display:none" id="keymapel">Mapel</span> 
+						<span style="display:none" id="keyaksessiswa">Akses</span> 
+						<span style="display:none" id="keypublikasi">Tgl Publikasi</span>
+						<span style="display:none" id="keydurasi">durasi</span>
+						<span style="display:none" id="keyidmateri">idmateri</span>
+
+				
+				<div style="padding:5px" id="identitastoken">
+					<div id="previewloginsiswa" style="width:80%;margin:auto;border:1px solid blue;border-radius:15px;padding:5px;background-color:#eee">
+						Mapel/Tema <sup>(dari kode token)</sup>:
+						<div id="hasiltoken" style="border:1px solid blue;width:90%;padding:1px;background-color:white"></div>
+						Pilih Sekolah:<br/>
+						<select id="previewpilihsekolah" style="border:1px solid blue;width:90%">
+							<option value="SDN Ratujaya 1" selected>SDN Ratujaya 1</option>
+						</select><br/>
+						Piih Kelas:<br/>
+						<select id="previewpilihkelas"  style="border:1px solid blue;width:50px">
+						</select><br/>
+						<div id="generateopsinama">
+							Nama Siswa:<br/>
+							<select id="previewpilihnama" onchange="aksessekalidijson()"style="border:1px solid blue;width:90%">
+							</select><br/>
+							<span id="cekkerjaansiswa"></span>
+						</div>
+						<button  class="wa" id="buatopsinama">Tampilkan Nama Kelas</button>
+						<button onclick="mulaibelajar()" id="timermulai" class="wa">Mulai </button>
+					</div>
+					<div id="tes"></div>
+					
+					<div id="materiimport" style="padding:5px;text-align:justify;font-size:12px">
+						DI SINI AKAN MUNCUL teks html dari upload file notepad
+					</div>
+					<div id="hasilbelajarsekali">
+						rrrr
+					</div>
+<!-- START COPY CODE -->
+					<div id="nilaiku">
+						<div id="fromHTMLtestdiv">
+								<h2>Hasil Nilai</h2>
+								<br/>
+								<table >
+								<colgroup>
+									<col width="30%">
+									<col width="5%">
+									<col width="100%">
+								</colgroup>
+								<tr>
+									 <td> Nama Siswa </td>
+									 <td> : </td>
+									 <td><b id="demo2">trrre</b></td>
+								</tr>
+								<tr>
+									 <td>Mata Ujian</td>
+									 <td> : </td>
+									 <td><b id="mataujian"></b>
+									</td>
+								</tr>
+								<tr>
+									 <td> Nilai </td>
+									 <td> : </td>
+									 <td><b id="sum2">00</b> untuk Pilihan Ganda <p/><b id="benarga"></b> Untuk Isian (Validasi Gurumu)</td>
+								</tr>
+								<tr>
+									<td>Diselesaikan pada</td>
+									<td> : </td>
+									<td><b id="WaktuMengerjakan" >Waktu Selesai Mengerjakan</b></td>
+								</tr>
+								</table>
+
+								<div id="iAmID">
+									Jumlah Tugas:<b id="banyatugas"></b>
+								<br/>
+
+								<div id="daftartugas"></div>
+								<hr/>
+								<p>Jumlah soal PG :<b id="banyakelek"></b></p>
+								<p>Jumlah Soal sudah dijawab : <b id="dijawab"></b></p>
+								<p>Jumlah Soal belum dijawab : <b id="gadijawab"></b></p>
+
+								<p>Pilihan Ganda dijawab:</p>
+								<b id="daftarnya1"></b><hr/>
+								<p/>
+
+								<p>Soal Isian:</p>
+								<div id="apaini"></div>
+
+								</div>
+
+
+									 
+									 
+									 
+
+								<p id="bypassme" style="color:red">Simpan hasil nilai ini dalam bentuk pdf, lalu kirimkan ke WA Gurumu.</p><br/>
+						</div>
+					<div style="text-align:center"><button id="cmd" class="button">Simpan Pdf</button>
+
+					<script id="rendered-js">
+
+					$('#cmd').click(function () {
+					 var pdf = new jsPDF('p', 'pt', 'letter')
+
+					  // source can be HTML-formatted string, or a reference
+					  // to an actual DOM element from which the text will be scraped.
+					  , source = document.getElementById('fromHTMLtestdiv')
+
+					  // we support special element handlers. Register them with jQuery-style
+					  // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+					  // There is no support for any other type of selectors 
+					  // (class, of compound) at this time.
+					  , specialElementHandlers = {
+					   // element with id of "bypass" - jQuery style selector
+					   '#bypassme': function (element, renderer) {
+						// true = "handled elsewhere, bypass text extraction"
+						return true
+					   },
+					   '.hide': function (element, renderer) {
+						// true = "handled elsewhere, bypass text extraction"
+						return true
+					   }
+					  }
+
+					 var margins = {
+					  //top: 80,
+					  //bottom: 60,
+					  //left: 40,
+					  //width: 522
+					  top: 10,
+					  bottom: 10,
+					  left: 20,
+					  width: 522
+					 };
+					 // all coords and widths are in jsPDF instance's declared units
+					 // 'inches' in this case
+					 pdf.fromHTML(
+					  source // HTML string or DOM elem ref.
+					  , margins.left // x coord
+					  , margins.top // y coord
+					  , {
+					   'width': margins.width // max width of content on PDF
+					   , 'elementHandlers': specialElementHandlers
+					  },
+					  function (dispose) {
+					   // dispose: object with X, Y of the last line add to the PDF 
+					   //          this allow the insertion of new lines after html
+					   // Tes kalo nama siswa yang diuji coba
+						var NamaFileLamaso= document.getElementById("demo2").innerHTML ;
+
+					   pdf.save(NamaFileLamaso + '.pdf');
+					  },
+					  margins
+					 )
+					 
+					 
+					});
+					//# sourceURL=pen.js
+						</script>
+
+
+					</div>
+
+
+					<form class="gformV2020G pure-form pure-form-stacked" method="POST" name="formkirim"
+					  action="https://script.google.com/macros/s/AKfycbzySyKyPgXVYvf38iKhQXNTGWtnVyd3poAEM-2j78Rsxapk78Se/exec">
+					 <div class="pesanawalawal">
+					 <h2>Kirim Nilai ke Database Lamaso</h2>
+					  Selamat ya, Kamu berhasil mendapatkan nilai yang bagus.
+					  Hasil nilaimu akan langsung otomatis terkirim ke database Lamaso. Pengumuman umumnya, Kami akan posting di blog diposting di web <a href="https://www.sdnratujaya1.net">www.sdnratujaya1.net</a>
+					 </div>  
+					 <div class="form-elements" style="display:none">
+					  <fieldset  class="pure-group">
+					  <!-- Kecamatan_sekolah Sekolah_siswa Nama_Siswa Kelas Mata_Pelajaran -->
+					   <input id="email" name="email" ></input>
+					   <input id="Kecamatan_sekolah" name="Kecamatan_sekolah" ></input>
+					   <input id="Sekolah_siswa" name="Sekolah_siswa" ></input>
+					   <input id="Nama_siswa" name="Nama_siswa" ></input>
+					   <input id="Kelas" name="Kelas" ></input>
+					   <input id="Mata_Ujian" name="Mata_Ujian" ></input>
+					  </fieldset>
+					  <fieldset  id="PGExe" class="pure-group">
+					  </fieldset>
+					  <fieldset  id="NilaiExe" class="pure-group">
+					  
+					  </fieldset>
+					  <fieldset  id="ISIANExe" class="pure-group">
+					  </fieldset>
+					  <fieldset  id="TugasExe" class="pure-group">
+					  </fieldset>
+					  <fieldset  class="pure-group">
+					  <input id="versi" name="versi" value="Lamaso WhatsApp"></input>
+					  <input id="baru" name="baru" value="versi 2020g"></input>
+					  <input id="Skor_PG" name="Skor_PG" placeholder="Skor_PG"></input>
+					  </fieldset>
+					  <fieldset class="pure-group">
+					  <input id="LJK" name="LJK" ></input>
+					  <input id="nama_LJK" name="nama_LJK" ></input>
+					  </fieldset>
+					  <fieldset class="pure-group honeypot-field" style="display:none;">
+					   <label for="honeypot">
+					   Peringatan ini muncul karena proses pengiriman nilai Lamaso dihentikan oleh tim kami. Masalah ini bisa jadi karena Anda tidak mengisi formulir email yang tepat sehingga nilai yang dikirim mengalami kegagalan. Cobalah beberapa saat lagi.<br/><br/>
+					   Tim Lamaso: <i>Ade Andriansyah</i>
+					   </label>
+					   <input id="honeypot" type="text" name="honeypot" value="" />
+					  </fieldset>
+						  Ayo segera kirimkan nilai Kamu ke Lamaso. Daftarkan nilaimu untuk dikompetisikan bersama siswa-siswa lain. 
+					  <br/><br/>
+					  Kirim nilaimu di  sini:
+					 
+					  <button class="button-success pure-button button-xlarge" style="text-align:center" >
+							<i class="fa fa-paper-plane" ></i>Kirim Nilaiku</button>
+					  <br/><br/>
+					 </div> 
+
+					 <div class="thankyou_message" style="display:none;">
+					  <h2><em>Terimakasih, <b id="siswasukses">Nak.</b></em></h2>
+					  Hasil nilaimu sudah terkirim ke database Lamaso. Pengumuman hasil seluruh nilai peserta kompitisi ini dapat Kamu tanyakan ke guru kelasmu. Kami sudah memberitahukan kepada pengawas binaan masing-masing (Khusus Kota Depok). Pengumuman umumnya, Kami akan posting di web <a href="https://www.sdnratujaya1.net">www.sdnratujaya1.net</a>
+						</div>    <!-- Customise the Thankyou Message People See when they submit the form: -->
+					   </form>
+					 
+					<div style="border:1px solid blue;padding:10px;font-size:14px;text-align:center;border-radius:0px 0px 30px 30px"> 
+					<button id="kirimnilainilai" onClick="SimpanNilai()"><i class="fa fa-paper-plane" ></i> &nbsp;&nbsp; Kirim Nilaiku</button>
+					</div>
+
+					</div>
+<!-- END COPY CODE -->					
+				</div>
+				
+			</div>
+<script src="lamaso.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+
+	</body>
+</html>
